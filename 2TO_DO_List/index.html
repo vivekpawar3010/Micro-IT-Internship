@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#062e3f" />
+    <meta name="Description" content="An advanced To-Do List WebApp." />
+    <title>Task Manager & Productivity T racker</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="standard">
+    <header id="header">
+      <nav class="navbar">
+        <div class="nav-left">
+          <h1 id="title" class="standard-title">
+            Task Manager & Productivity Tracker
+          </h1>
+        </div>
+        <div class="nav-right">
+          <select id="theme-select" class="theme-select">
+            <option value="standard">Standard</option>
+            <option value="light">Light</option>
+            <option value="darker">Darker</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+          </select>
+          <button id="stats-btn" class="nav-button">
+            <i class="fas fa-chart-line"></i> Stats
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="form-section">
+        <form id="task-form">
+          <div class="form-group">
+            <input
+              type="text"
+              class="todo-input standard-input"
+              placeholder="What needs to be done?"
+              required
+            />
+            <div class="date-priority">
+              <input type="date" class="todo-date" required />
+              <select class="priority-select">
+                <option value="normal">Normal</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="todo-btn standard-button">
+            <i class="fas fa-plus"></i> Add Task
+          </button>
+        </form>
+      </section>
+
+      <section id="task-sections">
+        <div class="time-filters">
+          <button class="time-filter active" data-filter="all">
+            All Tasks
+          </button>
+          <button class="time-filter" data-filter="today">Today</button>
+          <button class="time-filter" data-filter="tomorrow">Tomorrow</button>
+          <button class="time-filter" data-filter="week">This Week</button>
+          <button class="time-filter" data-filter="month">This Month</button>
+          <button class="time-filter" data-filter="future">Future</button>
+        </div>
+
+        <div class="task-categories">
+          <div class="task-category" id="assigned-tasks">
+            <div class="category-header">
+              <h2><i class="fas fa-tasks"></i> Assigned Tasks</h2>
+              <span class="task-count">0</span>
+            </div>
+            <div class="category-description">
+              Tasks that are upcoming and not yet completed
+            </div>
+            <ul class="todo-list"></ul>
+          </div>
+
+          <div class="task-category" id="completed-tasks">
+            <div class="category-header">
+              <h2><i class="fas fa-check-circle"></i> Completed Tasks</h2>
+              <span class="task-count">0</span>
+            </div>
+            <div class="category-description">
+              Tasks you've successfully completed
+            </div>
+            <button id="toggle-completed" class="standard-button">
+              <i class="fas fa-eye"></i> Show Completed
+            </button>
+            <ul class="completed-list hidden"></ul>
+          </div>
+
+          <div class="task-category" id="not-completed-tasks">
+            <div class="category-header">
+              <h2><i class="fas fa-exclamation-circle"></i> Overdue Tasks</h2>
+              <span class="task-count">0</span>
+            </div>
+            <div class="category-description">
+              Tasks that passed their due date
+            </div>
+            <ul id="not-completed-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Stats Modal -->
+    <div id="stats-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Your Productivity Stats</h3>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-value" id="total-tasks">0</div>
+              <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="completed-tasks-count">0</div>
+              <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="overdue-tasks">0</div>
+              <div class="stat-label">Overdue</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="completion-rate">0%</div>
+              <div class="stat-label">Completion Rate</div>
+            </div>
+          </div>
+          <div class="stats-chart">
+            <canvas id="productivity-chart"></canvas>
+          </div>
+          <div class="activity-log">
+            <h4>Recent Activity</h4>
+            <ul id="activity-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
