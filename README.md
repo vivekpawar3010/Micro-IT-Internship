@@ -1,6 +1,5 @@
 # TaskFlow Pro - Smart Task Management System
 
-![Project Screenshot](/screenshot.png) *Replace with actual screenshot*
 
 ## 📌 Overview
 A modern, intuitive task management application that helps users organize, prioritize, and track their tasks with smart categorization and deadline management.
