@@ -1,39 +1,35 @@
-# Micro-IT Internship Projects
 
-This repository contains two mini-projects:
+# Task Manager & Productivity Tracker - Smart Task Management System
 
----
 
-## 📱 CalcPro - Advanced JavaScript Calculator
+## 📌 Overview
+A modern, intuitive task management application that helps users organize, prioritize, and track their tasks with smart categorization and deadline management.
 
-A powerful and responsive calculator built using JavaScript.
+## ✨ Features
+- **Smart Task Categorization**: Automatically sorts tasks into:
+  - Assigned (upcoming)
+  - Overdue (missed deadlines)
+  - No Date (tasks without deadlines)
+  - Completed
+- **Priority System**: 
+  - 🔴 High (Urgent & Important)
+  - 🟡 Medium (Important but not urgent)
+  - 🔵 Low (Nice-to-have)
+  - ⚪ Normal (Regular tasks)
+- **Flexible Task Creation**: Add tasks with or without deadlines
+- **Interactive UI**: 
+  - Theme switcher (4 color schemes)
+  - Responsive design
+  - Intuitive controls
+- **Data Persistence**: All tasks saved in browser localStorage
 
-### ✨ Features
-
-- Full keyboard support (0-9, +, -, \*, /, Enter, Esc)
-- Error handling (division by zero → "Error")
-- Memory functions (MC, MR, M+, M-)
-- Responsive design
-
----
-
-## ✅ Task Manager - Smart Productivity Tracker
-
-Helps users manage and prioritize their tasks effectively.
-
-### ✨ Features
-
-- Smart categorization (Assigned, Overdue, No Date, Completed)
-- Priority levels: 🔴 High, 🟡 Medium, 🔵 Low, ⚪ Normal
-- Flexible task creation
-- UI with theme switcher
-- Data saved in browser localStorage
-
----
+## 🛠️ Technologies Used
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: CSS Variables for theming, Flexbox/Grid layout
+- **Icons**: Font Awesome
+- **Font**: Google Fonts (Work Sans)
 
 ## 🚀 Getting Started
-
-```bash
-git clone https://github.com/vivekpawar3010/Micro-IT-Internship.git
-cd Micro-IT-Internship
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/taskflow-pro.git
